@@ -1,6 +1,6 @@
-import { Footer } from './components/Footer';
-import { Header } from './components/Header';
-import { Items } from './components/Items';
+import { Footer } from './components/Footer/Footer'
+import { Header } from './components/Header/Header'
+import { Items } from './components/Items/Items'
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Items />
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
