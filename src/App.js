@@ -1,6 +1,4 @@
-import { Footer } from './components/Footer/Footer'
-import { Header } from './components/Header/Header'
-import { Items } from './components/Items/Items'
+import { Footer, Header, Items } from './components/'
 
 function App() {
   return (

@@ -1,25 +1,25 @@
-header .logo {
+.logo {
   font-weight: 600;
   font-size: 20px;
 }
 
-header ul.nav {
+ul .nav {
   float: right;
   list-style: none;
 }
 
-header ul.nav li {
+ul .nav li {
   display: inline;
   margin-left: 25px;
   cursor: pointer;
   transition: 0.2s ease;
 }
 
-header ul.nav li:hover {
+ul.nav li:hover {
   opacity: 0.5;
 }
 
-header .presentations {
+.presentations {
   position: relative;
   margin: 50px 0;
   width: 100%;
@@ -31,7 +31,7 @@ header .presentations {
   background-color: grey;
 }
 
-header .presentations::after {
+.presentations::after {
   content: "Лучшие товары для вашего дома";
   position: absolute;
   top: 100px;
@@ -42,7 +42,7 @@ header .presentations::after {
   color: white;
 }
 
-header .presentations::before {
+.presentations::before {
   content: "По низким ценам";
   position: absolute;
   top: 250px;
