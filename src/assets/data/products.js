@@ -2,7 +2,7 @@ const products = [
   {
     id: 1,
     title: 'Стул',
-    img: 'chair.jpeg',
+    img: 'chair.jpg',
     desc: 'Стул со спинкой на четырех ножках',
     category: 'chairs',
     price: '1000',
@@ -10,7 +10,7 @@ const products = [
   {
     id: 2,
     title: 'Стол',
-    img: 'table.jpeg',
+    img: 'table.jpg',
     desc: 'Стол обеденный деревянный',
     category: 'table',
     price: '2000',
@@ -18,7 +18,7 @@ const products = [
   {
     id: 3,
     title: 'Диван',
-    img: 'sofa.jpeg',
+    img: 'sofa.jpg',
     desc: 'Диван-книжка',
     category: 'sofa',
     price: '3000',
@@ -26,7 +26,7 @@ const products = [
   {
     id: 4,
     title: 'Шкаф',
-    img: 'closet.jpeg',
+    img: 'closet.jpg',
     desc: 'Шкаф для хранения книг по программированию',
     category: 'closet',
     price: '2500',
@@ -34,7 +34,7 @@ const products = [
   {
     id: 5,
     title: 'Кресло',
-    img: 'armchair.jpeg',
+    img: 'armchair.jpg',
     desc: 'Кресло для отдыха после завода',
     category: 'armchair',
     price: '2200',
@@ -42,11 +42,11 @@ const products = [
   {
     id: 6,
     title: 'Стеллаж',
-    img: 'rack.jpeg',
+    img: 'rack.jpg',
     desc: 'Стеллаж для хранения настиных фигурок',
     category: 'rack',
     price: '1800',
   },
-];
+]
 
-export default products;
+export default products

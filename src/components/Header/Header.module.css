@@ -3,12 +3,12 @@
   font-size: 20px;
 }
 
-ul .nav {
+ul.nav {
   float: right;
   list-style: none;
 }
 
-ul .nav li {
+ul.nav li {
   display: inline;
   margin-left: 25px;
   cursor: pointer;
