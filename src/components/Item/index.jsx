@@ -1,6 +1,6 @@
 import style from './Item.module.css'
 
-export const Item = ({ product }) => {
+export const Item = ({ product, addInCart }) => {
   return (
     <div className={style.item}>
       <div className={style.image}>
@@ -11,7 +11,9 @@ export const Item = ({ product }) => {
         <p>{product.desc}</p>
         <b>{product.price} руб.</b>
       </div>
-      <div className={style.add_to_cart}>+</div>
+      <div className={style.add_to_cart} onClick={() => addInCart(product)}>
+        +
+      </div>
     </div>
   )
 }

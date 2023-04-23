@@ -3,7 +3,7 @@ import { useState } from 'react'
 import classNames from 'classnames'
 import style from './Header.module.css'
 
-export function Header() {
+export function Header({ cart }) {
   let [cartOpen, setCartOpen] = useState(false)
 
   return (
@@ -23,7 +23,20 @@ export function Header() {
           onClick={() => setCartOpen((cartOpen = !cartOpen))}
         />
       </div>
-      {cartOpen && <div className={style.cart}></div>}
+      {cartOpen && (
+        <div className={style.cart}>
+          {cart.length ? (
+            <ul>
+              {cart.map((prodToCart) => {
+                return <li key={prodToCart.id}>{prodToCart.title}</li>
+              })}
+            </ul>
+          ) : (
+            <div>Ваша корзина пуста</div>
+          )}
+        </div>
+      )}
+
       <div className={style.presentations}></div>
     </header>
   )
