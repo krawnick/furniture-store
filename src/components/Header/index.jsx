@@ -2,6 +2,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 import { useState } from 'react'
 import classNames from 'classnames'
 import style from './Header.module.css'
+import { Order } from '../Order'
 
 export function Header({ cart }) {
   let [cartOpen, setCartOpen] = useState(false)
@@ -26,11 +27,15 @@ export function Header({ cart }) {
       {cartOpen && (
         <div className={style.cart}>
           {cart.length ? (
-            <ul>
-              {cart.map((prodToCart) => {
-                return <li key={prodToCart.id}>{prodToCart.title}</li>
+            <div>
+              {cart.map((product) => {
+                return (
+                  <Order key={product.id} product={product}>
+                    {product.title}
+                  </Order>
+                )
               })}
-            </ul>
+            </div>
           ) : (
             <div>Ваша корзина пуста</div>
           )}

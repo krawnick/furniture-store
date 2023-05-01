@@ -1,0 +1,36 @@
+.cartItem {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  border: 1px solid #bebebe;
+  border-radius: 5px;
+}
+.cartItem:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.cartItem img {
+  width: 70px;
+  float: left;
+  margin-right: 20px;
+}
+
+.cartItem h2 {
+  flex: 1 1 auto;
+  font-size: 20px;
+}
+
+.cartItem p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #797979;
+}
+
+.deleteIcon {
+  padding: 10px;
+}
+.deleteIcon:hover {
+  transform: scale(1.3);
+  color: #8d0505;
+}

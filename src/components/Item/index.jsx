@@ -11,7 +11,7 @@ export const Item = ({ product, addInCart }) => {
         <p>{product.desc}</p>
         <b>{product.price} руб.</b>
       </div>
-      <div className={style.add_to_cart} onClick={() => addInCart(product)}>
+      <div className={style.addToCart} onClick={() => addInCart(product)}>
         +
       </div>
     </div>

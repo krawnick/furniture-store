@@ -37,14 +37,18 @@ ul.nav li:hover {
 .cart {
   z-index: 100;
   position: absolute;
+  padding: 20px;
   top: 50px;
   right: 0;
-  width: 450px;
-  height: 100px;
+  width: 360px;
   background-color: #fafafa;
   border-radius: 10px;
   -webkit-box-shadow: 9px 8px 18px -4px rgba(0, 0, 0, 0.83);
   box-shadow: 9px 8px 18px -4px rgba(0, 0, 0, 0.83);
+}
+
+.cartItem {
+  width: 100%;
 }
 
 .presentations {
