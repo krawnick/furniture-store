@@ -3,9 +3,8 @@ import { useLocalStorage } from './hooks/localStorage'
 
 function App() {
   const [prodInCart, setProdInCart] = useLocalStorage('toCart', [])
-  // const addInCartHandler = (product) => {
-  //   setProdInCart([...prodInCart, product])
-  // }
+
+  // Добавление товара в корзину
   const addInCartHandler = (product) => {
     let isInArray = false
     prodInCart.forEach((el) => {
@@ -16,9 +15,15 @@ function App() {
     }
   }
 
+  // Удаление товара из корзины
+  const deleteFromCartHandler = (id) => {
+    const result = prodInCart.filter((el) => el.id !== id)
+    setProdInCart([...result])
+  }
+
   return (
     <div className="wrapper">
-      <Header cart={prodInCart} />
+      <Header cart={prodInCart} deleteFromCart={deleteFromCartHandler} />
       <Items addInCart={addInCartHandler} />
       <Footer />
     </div>

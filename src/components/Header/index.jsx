@@ -4,8 +4,15 @@ import classNames from 'classnames'
 import style from './Header.module.css'
 import { Order } from '../Order'
 
-export function Header({ cart }) {
+export function Header({ cart, deleteFromCart }) {
   let [cartOpen, setCartOpen] = useState(false)
+
+  // Стоимость товаров в корзине
+  let sumPrice = 0
+  cart.forEach((el) => {
+    sumPrice += Number(el.price)
+    return sumPrice
+  })
 
   return (
     <header>
@@ -30,11 +37,21 @@ export function Header({ cart }) {
             <div>
               {cart.map((product) => {
                 return (
-                  <Order key={product.id} product={product}>
+                  <Order
+                    key={product.id}
+                    product={product}
+                    deleteFromCart={deleteFromCart}
+                  >
                     {product.title}
                   </Order>
                 )
               })}
+              <p className={style.price}>
+                итого к оплате:
+                <span
+                  className={style.sumPrice}
+                >{` ${new Intl.NumberFormat().format(sumPrice)} руб.`}</span>
+              </p>
             </div>
           ) : (
             <div>Ваша корзина пуста</div>
