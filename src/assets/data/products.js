@@ -4,7 +4,7 @@ const products = [
     title: 'Стул',
     img: 'chair.jpg',
     desc: 'Стул со спинкой на четырех ножках',
-    category: 'chairs',
+    category: 'chair',
     price: '1000',
   },
   {
