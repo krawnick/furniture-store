@@ -2,7 +2,7 @@ import { Item } from '../Item'
 import products from '../../assets/data/products'
 import style from './Items.module.css'
 
-export const Items = ({ addInCart, category }) => {
+export const Items = ({ addInCart, category, showItem }) => {
   const filterProducts = [...products].filter((el) => {
     return category !== 'all' ? el.category === category : category
   })
@@ -11,7 +11,12 @@ export const Items = ({ addInCart, category }) => {
     <main>
       {filterProducts.map((product) => {
         return (
-          <Item key={product.id} product={product} addInCart={addInCart}></Item>
+          <Item
+            key={product.id}
+            product={product}
+            addInCart={addInCart}
+            showItem={showItem}
+          ></Item>
         )
       })}
     </main>

@@ -1,6 +1,6 @@
-import { Categories, Footer, Header, Items } from './components/'
-import { useLocalStorage } from './hooks/localStorage'
 import { useState } from 'react'
+import { useToggle, useLocalStorage } from './hooks/'
+import { Categories, Footer, Header, Items, ShowItem } from './components/'
 
 function App() {
   const [prodInCart, setProdInCart] = useLocalStorage('toCart', [])
@@ -24,16 +24,26 @@ function App() {
 
   // Передача категории из компонента Categories
   const [category, setCategory] = useState('all')
-
   const transferCategoryHandler = (category) => {
     setCategory(category)
+  }
+
+  // Отображение ShowItem
+  const [onShowItem, setOnShowItem] = useToggle()
+  const showItemHadler = () => {
+    setOnShowItem()
   }
 
   return (
     <div className="wrapper">
       <Header cart={prodInCart} deleteFromCart={deleteFromCartHandler} />
       <Categories transferCategory={transferCategoryHandler} />
-      <Items addInCart={addInCartHandler} category={category} />
+      <Items
+        addInCart={addInCartHandler}
+        category={category}
+        showItem={showItemHadler}
+      />
+      {onShowItem && <ShowItem />}
       <Footer />
     </div>
   )
