@@ -1,0 +1,33 @@
+.modaleBackground {
+  position: fixed;
+  z-index: 999;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modale {
+  position: relative;
+  width: 600px;
+  margin: 10% auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.modale .image {
+  position: relative;
+  width: 100%;
+  padding: 0 0 67% 0;
+  transition: 0.3s ease;
+}
+.modale .image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

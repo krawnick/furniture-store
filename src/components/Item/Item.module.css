@@ -1,4 +1,4 @@
-b {
+.item b {
   margin-bottom: 10px;
   color: #5fa36a;
 }
@@ -11,13 +11,13 @@ b {
   overflow: hidden;
   border-radius: 10px;
 }
-.image {
+.item .image {
   position: relative;
   width: 100%;
   padding: 0 0 67% 0;
   transition: 0.3s ease;
 }
-.image img {
+.item .image img {
   position: absolute;
   top: 0;
   left: 0;
@@ -25,30 +25,15 @@ b {
   width: 100%;
   object-fit: cover;
 }
-.image:hover {
+.item .image:hover {
   transform: scale(1.1);
 }
-.content {
+.item .content {
   padding: 20px 10px;
 }
 
-.addToCart {
+.item .addToCart {
   position: absolute;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  line-height: 35px;
   right: 20px;
   bottom: 20px;
-  font-weight: 600;
-  font-size: 40px;
-  color: #fff;
-  border-radius: 50%;
-  background-color: #ca5252;
-  cursor: pointer;
-  transition: 0.1s ease;
-}
-
-.addToCart:hover {
-  transform: scale(1.25) translateY(-5px);
 }

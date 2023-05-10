@@ -8,11 +8,10 @@ export function Header({ cart, deleteFromCart }) {
   let [cartOpen, setCartOpen] = useState(false)
 
   // Стоимость товаров в корзине
-  let sumPrice = 0
-  cart.forEach((el) => {
-    sumPrice += Number(el.price)
-    return sumPrice
-  })
+  const sumPrice = cart.reduce((result, product) => {
+    console.log(product.price)
+    return Number(product.price) + result
+  }, 0)
 
   return (
     <header>

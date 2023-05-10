@@ -1,0 +1,19 @@
+.addToCart {
+  /* position: absolute; */
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  /* right: 20px; */
+  /* bottom: 20px; */
+  font-weight: 600;
+  font-size: 40px;
+  color: #fff;
+  border-radius: 50%;
+  background-color: #ca5252;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+.addToCart:hover {
+  transform: scale(1.25) translateY(-5px);
+}

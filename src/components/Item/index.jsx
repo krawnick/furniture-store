@@ -1,4 +1,4 @@
-import { ShowItem } from '../ShowItem'
+import { ButtonAdd } from '../UI'
 import style from './Item.module.css'
 
 export const Item = ({ product, addInCart, showItem }) => {
@@ -18,8 +18,8 @@ export const Item = ({ product, addInCart, showItem }) => {
         <p>{product.desc}</p>
         <b>{product.price} руб.</b>
       </div>
-      <div className={style.addToCart} onClick={() => addInCart(product)}>
-        +
+      <div className={style.addToCart}>
+        <ButtonAdd onClick={() => addInCart(product)} />
       </div>
     </div>
   )

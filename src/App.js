@@ -45,7 +45,13 @@ function App() {
         category={category}
         showItem={showItemHadler}
       />
-      {onShowItem && <ShowItem product={showProduct} />}
+      {onShowItem && (
+        <ShowItem
+          product={showProduct}
+          onShowItem={setOnShowItem}
+          addInCart={addInCartHandler}
+        />
+      )}
       <Footer />
     </div>
   )
