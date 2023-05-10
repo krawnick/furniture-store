@@ -29,8 +29,10 @@ function App() {
   }
 
   // Отображение ShowItem
+  const [showProduct, setShowProduct] = useState('')
   const [onShowItem, setOnShowItem] = useToggle()
-  const showItemHadler = () => {
+  const showItemHadler = (product) => {
+    setShowProduct(product)
     setOnShowItem()
   }
 
@@ -43,7 +45,7 @@ function App() {
         category={category}
         showItem={showItemHadler}
       />
-      {onShowItem && <ShowItem />}
+      {onShowItem && <ShowItem product={showProduct} />}
       <Footer />
     </div>
   )
