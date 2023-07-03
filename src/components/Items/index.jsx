@@ -1,11 +1,13 @@
 import { Item } from '../Item'
 import products from '../../assets/data/products'
 import style from './Items.module.css'
+import { useSelector } from 'react-redux'
+import { selectVisibleCategory } from '../../features/Categories/catregoriesSlice'
 
-export const Items = ({ addInCart, category, showItem }) => {
-  const filterProducts = [...products].filter((el) => {
-    return category !== 'all' ? el.category === category : category
-  })
+export const Items = ({ addInCart, showItem }) => {
+  const filterProducts = useSelector((state) =>
+    selectVisibleCategory(state, products)
+  )
 
   return (
     <main>

@@ -1,4 +1,6 @@
+import { useDispatch } from 'react-redux'
 import style from './Categories.module.css'
+import { setCategory } from './catregoriesSlice'
 
 export const Categories = ({ transferCategory }) => {
   const KEY_FILTER = [
@@ -11,6 +13,8 @@ export const Categories = ({ transferCategory }) => {
     { key: 'rack', name: 'Стеллажи' },
   ]
 
+  const dispatch = useDispatch()
+
   return (
     <div className={style.categories}>
       <ul>
@@ -19,7 +23,7 @@ export const Categories = ({ transferCategory }) => {
             <li
               key={el.key}
               onClick={() => {
-                transferCategory(el.key)
+                dispatch(setCategory(el.key))
               }}
             >
               {el.name}

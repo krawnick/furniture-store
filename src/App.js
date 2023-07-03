@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useToggle, useLocalStorage } from './hooks/'
-import { Categories, Footer, Header, Items, ShowItem } from './components/'
+import { Footer, Header, Items, ShowItem } from './components/'
+import { Categories } from './features'
 
 function App() {
   const [prodInCart, setProdInCart] = useLocalStorage('toCart', [])
