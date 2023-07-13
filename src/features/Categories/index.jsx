@@ -1,18 +1,9 @@
 import { useDispatch } from 'react-redux'
-import style from './Categories.module.css'
 import { setCategory } from './catregoriesSlice'
+import { KEY_FILTER } from './categoriesConst'
+import style from './Categories.module.css'
 
 export const Categories = () => {
-  const KEY_FILTER = [
-    { key: 'all', name: 'Всё' },
-    { key: 'chair', name: 'Стулья' },
-    { key: 'table', name: 'Столы' },
-    { key: 'sofa', name: 'Диваны' },
-    { key: 'closet', name: 'Шкафы' },
-    { key: 'armchair', name: 'Кресла' },
-    { key: 'rack', name: 'Стеллажи' },
-  ]
-
   const dispatch = useDispatch()
 
   return (
