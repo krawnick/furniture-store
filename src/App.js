@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useToggle, useLocalStorage } from './hooks/'
 import { Footer, Header, Items, ShowItem } from './components/'
-import { Categories } from './features'
+import { Categories, Products } from './features'
 
 function App() {
   const [prodInCart, setProdInCart] = useLocalStorage('toCart', [])
@@ -41,11 +41,7 @@ function App() {
     <div className="wrapper">
       <Header cart={prodInCart} deleteFromCart={deleteFromCartHandler} />
       <Categories transferCategory={transferCategoryHandler} />
-      <Items
-        addInCart={addInCartHandler}
-        category={category}
-        showItem={showItemHadler}
-      />
+      <Products />
       {onShowItem && (
         <ShowItem
           product={showProduct}

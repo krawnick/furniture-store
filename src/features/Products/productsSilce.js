@@ -23,8 +23,9 @@ const productsSLice = createSlice({
         state.error = null
       })
       .addCase(loadProducts.rejected, (state, action) => {
+        action.error && console.log('ERROR', action.error)
         state.status = 'rejected'
-        state.error = action.payload || action.meta.error
+        state.error = action.payload || action.error
       })
       .addCase(loadProducts.fulfilled, (state, action) => {
         state.status = 'received'

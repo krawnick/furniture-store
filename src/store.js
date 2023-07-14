@@ -7,10 +7,10 @@ import * as api from './config'
 export const store = configureStore({
   reducer: { categories: categoriesReducer, products: productsReducer },
   devTools: true,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
+  middleware: (getDefaultmiddleware) =>
+    getDefaultmiddleware({
       thunk: {
-        extraArgumets: {
+        extraArgument: {
           client: axios,
           api,
         },
