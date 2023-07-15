@@ -1,20 +1,24 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { loadProducts } from './productsSilce'
+import { loadProducts, selectVisibleProducts } from './productsSilce'
 import { Item } from '../../components'
+import style from './Products.module.css'
 
 export const Products = () => {
   const products = useSelector((state) => state.products.list)
-  console.log(products)
+  const filterProducts = useSelector((state) =>
+    selectVisibleProducts(state, products)
+  )
+
   const dispatch = useDispatch()
   useEffect(() => {
-    if (products.length === 0) {
+    if (filterProducts.length === 0) {
       dispatch(loadProducts())
     }
-  }, [products.length, dispatch])
+  }, [filterProducts.length, dispatch])
   return (
-    <main>
-      {products.map((product) => {
+    <main className={style.main}>
+      {filterProducts.map((product) => {
         return (
           <Item
             key={product.id}

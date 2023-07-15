@@ -35,3 +35,11 @@ const productsSLice = createSlice({
 })
 
 export const productsReducer = productsSLice.reducer
+
+export const selectVisibleProducts = (state, products) => {
+  return products.filter((product) => {
+    return state.categories === 'all'
+      ? product
+      : product.category === state.categories
+  })
+}
