@@ -11,4 +11,4 @@ const categoriesSlice = createSlice({
 export const { setCategory } = categoriesSlice.actions
 export const categoriesReducer = categoriesSlice.reducer
 
-// export const selectCategory = (state) => state.categories
+export const selectCategory = (state) => state.categories

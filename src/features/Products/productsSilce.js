@@ -36,10 +36,8 @@ const productsSLice = createSlice({
 
 export const productsReducer = productsSLice.reducer
 
-export const selectVisibleProducts = (state, products) => {
+export const selectVisibleProducts = (category, products) => {
   return products.filter((product) => {
-    return state.categories === 'all'
-      ? product
-      : product.category === state.categories
+    return category === 'all' ? product : product.category === category
   })
 }
