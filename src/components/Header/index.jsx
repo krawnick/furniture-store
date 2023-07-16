@@ -1,15 +1,14 @@
 import { FaShoppingCart } from 'react-icons/fa'
+import { Cart } from '../../features/Cart'
 import { useState } from 'react'
 import classNames from 'classnames'
 import style from './Header.module.css'
-import { Order } from '../Order'
 
 export function Header({ cart, deleteFromCart }) {
   let [cartOpen, setCartOpen] = useState(false)
 
   // Стоимость товаров в корзине
   const sumPrice = cart.reduce((result, product) => {
-    console.log(product.price)
     return Number(product.price) + result
   }, 0)
 
@@ -36,13 +35,11 @@ export function Header({ cart, deleteFromCart }) {
             <div>
               {cart.map((product) => {
                 return (
-                  <Order
+                  <Cart
                     key={product.id}
                     product={product}
                     deleteFromCart={deleteFromCart}
-                  >
-                    {product.title}
-                  </Order>
+                  />
                 )
               })}
               <p className={style.price}>
