@@ -26,7 +26,9 @@ ul.nav li:hover {
 .shop_cart_button {
   float: right;
   cursor: pointer;
-  transition: color, transform 0.2s ease;
+  transition:
+    color,
+    transform 0.2s ease;
 }
 .shop_cart_button:hover,
 .active {
@@ -34,32 +36,8 @@ ul.nav li:hover {
   transform: scale(1.5);
 }
 
-.cart {
-  z-index: 100;
-  position: absolute;
-  padding: 20px;
-  top: 50px;
-  right: 0;
-  min-width: 400px;
-  background-color: #fafafa;
-  border-radius: 10px;
-  -webkit-box-shadow: 9px 8px 18px -4px rgba(0, 0, 0, 0.83);
-  box-shadow: 9px 8px 18px -4px rgba(0, 0, 0, 0.83);
-}
-
 .cartItem {
   width: 100%;
-}
-
-.price {
-  font-size: 20px;
-}
-.sumPrice {
-  float: right;
-  font-size: 24px;
-  font-weight: 600;
-  color: #005e10;
-  text-decoration: underline;
 }
 
 .presentations {

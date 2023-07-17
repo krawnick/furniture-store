@@ -1,16 +1,11 @@
 import { FaShoppingCart } from 'react-icons/fa'
 import { Cart } from '../../features/Cart'
-import { useState } from 'react'
 import classNames from 'classnames'
 import style from './Header.module.css'
+import { useToggle } from '../../hooks/toggle'
 
 export function Header({ cart, deleteFromCart }) {
-  let [cartOpen, setCartOpen] = useState(false)
-
-  // Стоимость товаров в корзине
-  const sumPrice = cart.reduce((result, product) => {
-    return Number(product.price) + result
-  }, 0)
+  let [cartOpen, setCartOpen] = useToggle()
 
   return (
     <header>
@@ -26,34 +21,10 @@ export function Header({ cart, deleteFromCart }) {
             style.shop_cart_button,
             cartOpen ? style.active : ''
           )}
-          onClick={() => setCartOpen((cartOpen = !cartOpen))}
+          onClick={() => setCartOpen()}
         />
       </div>
-      {cartOpen && (
-        <div className={style.cart}>
-          {cart.length ? (
-            <div>
-              {cart.map((product) => {
-                return (
-                  <Cart
-                    key={product.id}
-                    product={product}
-                    deleteFromCart={deleteFromCart}
-                  />
-                )
-              })}
-              <p className={style.price}>
-                итого к оплате:
-                <span
-                  className={style.sumPrice}
-                >{` ${new Intl.NumberFormat().format(sumPrice)} руб.`}</span>
-              </p>
-            </div>
-          ) : (
-            <div>Ваша корзина пуста</div>
-          )}
-        </div>
-      )}
+      {cartOpen && <Cart />}
 
       <div className={style.presentations}></div>
     </header>

@@ -7,15 +7,15 @@ function App() {
   const [prodInCart, setProdInCart] = useLocalStorage('toCart', [])
 
   // Добавление товара в корзину
-  const addInCartHandler = (product) => {
-    let isInArray = false
-    prodInCart.forEach((el) => {
-      if (el.id === product.id) isInArray = true
-    })
-    if (!isInArray) {
-      setProdInCart([...prodInCart, product])
-    }
-  }
+  // const addInCartHandler = (product) => {
+  //   let isInArray = false
+  //   prodInCart.forEach((el) => {
+  //     if (el.id === product.id) isInArray = true
+  //   })
+  //   if (!isInArray) {
+  //     setProdInCart([...prodInCart, product])
+  //   }
+  // }
 
   // Удаление товара из корзины
   const deleteFromCartHandler = (id) => {
@@ -46,7 +46,7 @@ function App() {
         <ShowItem
           product={showProduct}
           onShowItem={setOnShowItem}
-          addInCart={addInCartHandler}
+          // addInCart={addInCartHandler}
         />
       )}
       <Footer />
