@@ -10,7 +10,6 @@ const cartSlice = createSlice({
   name: '@@cart',
   initState,
   reducers: {
-    loadCart: (state) => {},
     showCart: (state, action) => {
       state.showCart = !action.payload
     },
@@ -23,5 +22,5 @@ const cartSlice = createSlice({
   },
 })
 
-export const { showCart, removeFromCart } = cartSlice.actions
+export const { addToCart, showCart, removeFromCart } = cartSlice.actions
 export const cartReducer = cartSlice.reducer

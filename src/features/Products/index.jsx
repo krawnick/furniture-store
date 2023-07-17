@@ -5,6 +5,7 @@ import { Item } from '../../components'
 import style from './Products.module.css'
 import { selectCategory } from '../Categories/catregoriesSlice'
 import { useLocalStorage } from '../../hooks'
+import { addToCart } from '../Cart/cartSlice'
 
 export const Products = () => {
   const selectedCategory = useSelector(selectCategory)
@@ -20,16 +21,6 @@ export const Products = () => {
   // Добавление товара в корзину
   const [prodInCart, setProdInCart] = useLocalStorage('toCart', [])
 
-  const addInCart = (product) => {
-    let isInArray = false
-    prodInCart.forEach((el) => {
-      if (el.id === product.id) isInArray = true
-    })
-    if (!isInArray) {
-      setProdInCart([...prodInCart, product])
-    }
-  }
-
   return (
     <main className={style.main}>
       {filterProducts.map((product) => {
@@ -37,7 +28,9 @@ export const Products = () => {
           <Item
             key={product.id}
             product={product}
-            addInCart={addInCart}
+            addInCart={() => {
+              dispatch(addToCart(product)) && setProdInCart(product)
+            }}
             // showItem={showItem}
           ></Item>
         )

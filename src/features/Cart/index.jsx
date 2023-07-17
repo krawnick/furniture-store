@@ -2,10 +2,9 @@ import { FaTrash } from 'react-icons/fa'
 import style from './Cart.module.css'
 import { useDispatch } from 'react-redux'
 import { removeFromCart } from './cartSlice'
-import { useEffect } from 'react'
 import { useLocalStorage } from '../../hooks'
 
-export const Cart = ({ product, deleteFromCart }) => {
+export const Cart = () => {
   const [prodInCart, setProdInCart] = useLocalStorage('toCart', [])
 
   const dispatch = useDispatch()
