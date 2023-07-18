@@ -4,7 +4,7 @@ import { Footer, Header, Items, ShowItem } from './components/'
 import { Categories, Products } from './features'
 
 function App() {
-  const [prodInCart, setProdInCart] = useLocalStorage('toCart', [])
+  const [prodInCart, setProdInCart] = [null, null]
 
   // Добавление товара в корзину
   // const addInCartHandler = (product) => {

@@ -1,18 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { useLocalStorage } from '../../hooks'
 
 const initState = {
   toCart: [],
-  showCart: false,
+  // showCart: false,
 }
 
 const cartSlice = createSlice({
   name: '@@cart',
   initState,
   reducers: {
-    showCart: (state, action) => {
-      state.showCart = !action.payload
-    },
+    // showCart: (state, action) => {
+    //   state.showCart = !action.payload
+    // },
     addToCart: (state, action) => {
       state.toCart.push(action.payload)
     },
