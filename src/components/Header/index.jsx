@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import style from './Header.module.css'
 import { useToggle } from '../../hooks/toggle'
 
-export function Header({ cart, deleteFromCart }) {
+export function Header() {
   let [cartOpen, setCartOpen] = useToggle()
 
   return (

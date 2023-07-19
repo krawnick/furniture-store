@@ -4,7 +4,6 @@ import { loadProducts, selectVisibleProducts } from './productsSilce'
 import { Item } from '../../components'
 import style from './Products.module.css'
 import { selectCategory } from '../Categories/catregoriesSlice'
-import { useLocalStorage } from '../../hooks'
 import { addToCart } from '../Cart/cartSlice'
 
 export const Products = () => {
@@ -18,9 +17,6 @@ export const Products = () => {
     }
   }, [products.length, dispatch])
 
-  // Добавление товара в корзину
-  const [prodInCart, setProdInCart] = useLocalStorage('toCart', [])
-
   return (
     <main className={style.main}>
       {filterProducts.map((product) => {
@@ -29,7 +25,7 @@ export const Products = () => {
             key={product.id}
             product={product}
             addInCart={() => {
-              dispatch(addToCart(product)) && setProdInCart(product)
+              dispatch(addToCart(product))
             }}
             // showItem={showItem}
           ></Item>

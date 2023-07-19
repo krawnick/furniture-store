@@ -17,7 +17,7 @@ import {
 } from 'redux-persist'
 
 const persistConfig = {
-  key: 'toCart',
+  key: 'cart',
   storage,
   whitelist: ['cart'],
 }

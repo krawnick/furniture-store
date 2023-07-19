@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import { useToggle, useLocalStorage } from './hooks/'
-import { Footer, Header, Items, ShowItem } from './components/'
+import { Footer, Header, ShowItem } from './components/'
 import { Categories, Products } from './features'
 
 function App() {
