@@ -1,21 +1,10 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { loadProducts, selectVisibleProducts } from './productsSilce'
 import { Item } from '../../components'
 import style from './Products.module.css'
-import { selectCategory } from '../Categories/catregoriesSlice'
 import { addToCart } from '../Cart/cartSlice'
+import { useSelectProducts } from './useSelectProducts'
 
 export const Products = () => {
-  const selectedCategory = useSelector(selectCategory)
-  const products = useSelector((state) => state.products.list)
-  const filterProducts = selectVisibleProducts(selectedCategory, products)
-  const dispatch = useDispatch()
-  useEffect(() => {
-    if (products.length === 0) {
-      dispatch(loadProducts())
-    }
-  }, [products.length, dispatch])
+  const [filterProducts, dispatch] = useSelectProducts()
 
   return (
     <main className={style.main}>

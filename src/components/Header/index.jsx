@@ -1,8 +1,8 @@
 import { FaShoppingCart } from 'react-icons/fa'
 import { Cart } from '../../features/Cart'
+import { useToggle } from '../../hooks/toggle'
 import classNames from 'classnames'
 import style from './Header.module.css'
-import { useToggle } from '../../hooks/toggle'
 
 export function Header() {
   let [cartOpen, setCartOpen] = useToggle()

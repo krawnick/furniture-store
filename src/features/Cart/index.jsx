@@ -1,16 +1,10 @@
 import { FaTrash } from 'react-icons/fa'
-import style from './Cart.module.css'
-import { useDispatch, useSelector } from 'react-redux'
 import { removeFromCart } from './cartSlice'
+import { useCart } from './useCart'
+import style from './Cart.module.css'
 
 export const Cart = () => {
-  const dispatch = useDispatch()
-  const prodInCart = useSelector((state) => state.cart)
-
-  // Стоимость товаров в корзине
-  const sumPrice = prodInCart.reduce((result, product) => {
-    return Number(product.price) + result
-  }, 0)
+  const [dispatch, prodInCart, sumPrice] = useCart()
 
   return (
     <div className={style.cart}>
