@@ -15,6 +15,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
+import { showItemReducer } from './features/ShowItem/showItemSlice'
 
 const persistConfig = {
   key: 'cart',
@@ -26,6 +27,7 @@ const reducers = combineReducers({
   categories: categoriesReducer,
   products: productsReducer,
   cart: cartReducer,
+  showItem: showItemReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducers)

@@ -13,5 +13,5 @@ export const useSelectProducts = () => {
       dispatch(loadProducts())
     }
   }, [products.length, dispatch])
-  return [filterProducts, dispatch]
+  return filterProducts
 }

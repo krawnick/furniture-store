@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux'
 import { Footer, Header, ShowItem } from './components/'
 import { Categories, Products } from './features'
 
@@ -7,7 +8,7 @@ function App() {
       <Header />
       <Categories />
       <Products />
-      {/* {onShowItem && <ShowItem />} */}
+      {useSelector((state) => state.showItem.showProduct) && <ShowItem />}
       <Footer />
     </div>
   )

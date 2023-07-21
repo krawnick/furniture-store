@@ -11,11 +11,17 @@ const initialState = {
   status: 'idle',
   error: null,
   list: [],
+  // product: {},
 }
 
 const productsSLice = createSlice({
   name: '@@products',
   initialState,
+  // reducers: {
+  //   selectProduct: (state, action) => {
+  //     state.product = action.payload
+  //   },
+  // },
   extraReducers: (builder) => {
     builder
       .addCase(loadProducts.pending, (state) => {
@@ -34,6 +40,7 @@ const productsSLice = createSlice({
   },
 })
 
+export const { selectProduct } = productsSLice.actions
 export const productsReducer = productsSLice.reducer
 
 export const selectVisibleProducts = (category, products) => {
