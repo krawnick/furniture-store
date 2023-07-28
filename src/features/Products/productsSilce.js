@@ -17,11 +17,6 @@ const initialState = {
 const productsSLice = createSlice({
   name: '@@products',
   initialState,
-  // reducers: {
-  //   selectProduct: (state, action) => {
-  //     state.product = action.payload
-  //   },
-  // },
   extraReducers: (builder) => {
     builder
       .addCase(loadProducts.pending, (state) => {
